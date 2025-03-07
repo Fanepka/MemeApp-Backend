@@ -48,7 +48,7 @@
 ### 1. Клонируй репозиторий
 
 ```bash
-git clone https://github.com/your-username/meme-app-backend.git
+git clone https://github.com/plywood/meme-app-backend.git
 cd meme-app-backend
 ```
 
