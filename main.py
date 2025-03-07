@@ -13,6 +13,7 @@ from auth import (
     create_access_token,
     create_refresh_token,
     get_current_user,
+    token_user,
     ACCESS_TOKEN_EXPIRE_MINUTES,
     REFRESH_TOKEN_EXPIRE_DAYS,
     oauth2_scheme,
@@ -122,8 +123,9 @@ def create_post(
     post: schemas.PostCreate,
     db: Session = Depends(get_db),
     current_user: schemas.User = Depends(get_current_user)
-):
-    return crud.create_post(db=db, post=post, user_id=current_user.id)
+):  
+    user = token_user(db, current_user['email'])
+    return crud.create_post(db=db, post=post, user_id=user.id)
 
 # Получение списка постов
 @app.get("/posts/", response_model=list[schemas.Post])

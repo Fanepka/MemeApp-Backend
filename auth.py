@@ -37,6 +37,11 @@ def authenticate_user(db: Session, email: str, password: str):
         return False
     return user
 
+def token_user(db: Session, email: str):
+    user = crud.get_user_by_email(db, email)
+
+    return user
+
 def create_access_token(data: dict, expires_delta: timedelta = None):
     to_encode = data.copy()
     if expires_delta:
@@ -73,7 +78,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
     except JWTError:
         raise credentials_exception
     # Здесь можно добавить логику для получения пользователя из базы данных
-    user = {"email": token_data.email}  # Замени на реального пользователя
+    user = {"email": token_data.email}
     if user is None:
         raise credentials_exception
     return user
