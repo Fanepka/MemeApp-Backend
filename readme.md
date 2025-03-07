@@ -1,9 +1,10 @@
+
 # 🎭 Meme App (Backend) 🚀
 
-![FastAPI](icons/FastAPI.svg)
-![Python](icons/Python.png =32x32)
-![SQLite](icons/SQLite.svg)
-![PostgreSQL](icons/PostgresSQL.png =32x32)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 Это серверная часть приложения для обмена мемами и фотографиями. Проект написан на Python с использованием FastAPI и SQLite3. В будущем планируется переход на PostgreSQL для улучшения производительности и масштабируемости. 🛠️
 
